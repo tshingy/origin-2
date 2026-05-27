@@ -4,31 +4,34 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Flask = "*"
-flask-sock = "*"
-gunicorn = "*"
+fastapi = "*"
+sqlalchemy = "*"
+uvicorn = "*"
 psycopg2 = "*"
-PyYAML = "*"
-requests = "*"
 alembic = "*"
-flask-sqlalchemy = "*"
-gevent = "*"
-sentry-sdk = {extras = ["flask"], version = "*"}
-urllib3 = "*"
-werkzeug = "*"
+python-dateutil = "*"
+httpx = "*"
+sentry-sdk = {extras = ["pure_eval", "sqlalchemy"], version = "*"}
 
 [dev-packages]
-black = "*"
-pylint = "*"
 pytest = "*"
-pytest-env = "*"
-pytest-alembic = "*"
-pygments = "*"
-pytest-cov = "*"
-coverage = "*"
+black = "*"
+isort = "*"
+mypy = "*"
+flake8 = "*"
+autopep8 = "*"
+types-python-dateutil = "*"
+types-requests = "*"
+pytest-dotenv = "*"
+ruff = "*"
+typing-extensions = "*"
 
 [requires]
-python_version = "3.14"
+python_version = "3.11"
 
 [scripts]
-tests = "pytest ."
+lint_types = "mypy ./app --disallow-untyped-defs"
+lint_black = "black . --check"
+lint_isort = "isort ./app --check-only"
+lint_flake8 = "flake8 ./app"
+local = "uvicorn app.app:app --reload"
