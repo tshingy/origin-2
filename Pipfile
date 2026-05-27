@@ -13,7 +13,7 @@ requests = "*"
 alembic = "*"
 flask-sqlalchemy = "*"
 gevent = "*"
-sentry-sdk = {extras = ["flask"], version = "*"}
+sentry-sdk = "*"
 urllib3 = "*"
 werkzeug = "*"
 
