@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Enable version updates for pip or Pipenv
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "development"
+    open-pull-requests-limit: 5
